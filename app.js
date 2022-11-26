@@ -174,10 +174,19 @@ let Student = function (name, age, hometown) {
 };
 
 let joe = new Student('Joe Schmoe', 100, 'Anytown, USA');
+// let joeOne = new Student('Joe Schmoe', 100, 'Anytown, USA');
+
+// const new Student = (name, age, hometown) => ({
+// this.name: name,
+// this.age: age,
+// this.hometown: hometown,
+// });
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
 console.log(joe);
+// console.log(joeOne);
+
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
@@ -186,10 +195,13 @@ console.log(joe);
 Student.prototype.greeting = function () {
   return `Hi, my name is ${this.name}`;
 };
+// Student.prototype.greetingOne = () => `Hi, my name is ${this.name}`;
+
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
-// console.log(joe.greeting());
+console.log(joe.greeting());
+// console.log(joe.greetingOne());
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
@@ -199,8 +211,12 @@ Student.courseName = function () {
   return 'This student is enrolled in Code 301.';
 };
 
+Student.courseNameOne = () => 'This student is enrolled in Code 301';
+// const oneLiner = course => `I cam currently enrolled in ${course}`;
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(Student.courseName());
+console.log(Student.courseName());
+console.log(Student.courseNameOne());
+
 
 
 
@@ -211,17 +227,19 @@ Student.prototype.scope = function () {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scope();
+joe.scope();
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scopeArrow();
+joe.scopeArrow();
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+//This is referring to the current object that it is within
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+//This refers to the window object
 // 3. Explain why "this" is different when an arrow function is used.
-//
+// This is different because arrow functions do not have any binding to the keyword this. The window object is what is bound to the arrow function.
+
+
